@@ -11,7 +11,7 @@ cars = pd.read_csv(address)
 cars.columns = ['car_names', 'mpg', 'cyl', 'disp', 'hp', 'drat', 'wt', 'qsec', 'vs', 'am', 'gear', 'carb']
 cars.head()
 
-df = pd.read_excel("C:/Users/ying.fan/Downloads/OBD2_Reporting.xlsx", sheet_name="OBD2")
+df = pd.read_excel("C:/Users/ying.fan/Downloads/reporting.xlsx", sheet_name="AA")
 mylist = df['SerialNumber'].tolist()
 print(mylist)
 
