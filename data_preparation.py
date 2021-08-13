@@ -4,17 +4,18 @@ import pandas as pd
 import csv
 from numpy import arange
 
+#example from course
 address = 'C:/Users/Lillian/Desktop/ExerciseFiles/Data/mtcars.csv'
-
 cars = pd.read_csv(address)
-
 cars.columns = ['car_names', 'mpg', 'cyl', 'disp', 'hp', 'drat', 'wt', 'qsec', 'vs', 'am', 'gear', 'carb']
 cars.head()
 
-df = pd.read_excel("C:/Users/ying.fan/Downloads/reporting.xlsx", sheet_name="AA")
-mylist = df['SerialNumber'].tolist()
+#to get list of IDs from xlsx file
+df = pd.read_excel(".../reporting.xlsx", sheet_name="AA")
+mylist = df['Id'].tolist()
 print(mylist)
 
+#remove listA from listB
 def remove(listA, listB):
     for item in listB:
         listA.remove(item)
@@ -24,10 +25,11 @@ listA = [1, 1, 2, 3, 4]
 listB = [1, 2, 3]
 remove(listA, listB)
 
-xl = pd.ExcelFile("C:/Users/ying.fan/Downloads/pandas_multiple.xlsx")
+#label values with color
+xl = pd.ExcelFile(".../pandas_multiple.xlsx")
 dfs = {sheet_name: xl.parse(sheet_name) 
           for sheet_name in xl.sheet_names}
-#df00= pd.DataFrame(['Weekly Update', 'Total No.', 'HW/FW revision'], columns=['0'])
+#df00= pd.DataFrame(['Weekly Update', 'Total No.', 'revision'], columns=['0'])
 df = dfs['summary']
 
 def color_red(val):
